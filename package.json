@@ -1,0 +1,22 @@
+{
+  "name": "algolia-test",
+  "version": "1.0.0",
+  "description": "technical test for algolia",
+  "main": "index.js",
+  "scripts": {
+    "combineData": "node ./lib/combineDataset.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohilpandya/alg-t-tst.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sohilpandya/alg-t-tst/issues"
+  },
+  "homepage": "https://github.com/sohilpandya/alg-t-tst#readme",
+  "dependencies": {
+    "papaparse": "^4.3.6"
+  }
+}
