@@ -5,11 +5,11 @@ const Restaurants = ({ numRestaurants, restaurants, processingTime }) => {
     return (
       <div>
         <h3> {restaurant.name} </h3>
-        <p> rating {restaurant.rating} </p>
-        <p> {restaurant.review} reviews</p>
-        <p> {restaurant.type} reviews</p>
-        <p> {restaurant.address} </p>
-        <p> {restaurant.range}</p>
+        <p> rating {restaurant.stars_count} </p>
+        <p> {restaurant.reviews_count} reviews</p>
+        <p> {restaurant.food_type} cuisine</p>
+        <p> {restaurant.neighborhood} </p>
+        <p> {restaurant.price_range}</p>
       </div>
     );
   });
