@@ -4,6 +4,10 @@
   "description": "technical test for algolia",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "combineData": "node ./lib/combineDataset.js"
   },
   "repository": {
@@ -17,6 +21,11 @@
   },
   "homepage": "https://github.com/sohilpandya/alg-t-tst#readme",
   "dependencies": {
-    "papaparse": "^4.3.6"
+    "algoliasearch": "^3.24.5",
+    "algoliasearch-helper": "^2.21.2",
+    "papaparse": "^4.3.6",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
   }
 }
