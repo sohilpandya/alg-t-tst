@@ -1,0 +1,38 @@
+.w3p5 {
+  width: 6rem;
+}
+
+.m7p5 {
+  min-width: 54rem;
+}
+
+.h1p5 {
+  height: 1.5rem;
+}
+
+.mw1p5 {
+  min-width: 1.5rem;
+}
+.bg-custom-blue {
+  background-color: #2897c5;
+}
+
+.bg-custom-dark-blue {
+  background-color: #1c688e;
+}
+
+.ma {
+  margin: 0 auto;
+}
+
+.vh-65 {
+  height: 60vh;
+}
+
+.star__blank {
+  /* background-image: url("../graphics/star-empty.png");
+  background-position: center;
+  background-size: cover; */
+  width: 2rem;
+  height: 2rem;
+}

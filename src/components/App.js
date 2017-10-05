@@ -38,6 +38,18 @@ class App extends Component {
     this.searchAlgolia(value);
   };
 
+  handleCuisineSelection = value => {
+    let newFilterState = Object.assign(
+      {},
+      { rating: this.state.filter.rating },
+      { cuisine: value }
+    );
+    this.setState({
+      ...this.state,
+      filter: newFilterState
+    });
+  };
+
   searchAlgolia = value => {
     index.search(value, (err, content) => {
       console.log(content);
@@ -53,17 +65,18 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="app-container">
-        <p> hello!</p>
         <Search
           inputValue={this.state.search.value}
           handleSearchInput={this.handleSearchInput}
         />
-        <div>
+        <div className="flex">
           <Filters
             cuisine={this.state.filter.cuisine}
             rating={this.state.filter.rating}
+            handleCuisineSelection={this.handleCuisineSelection}
           />
           <Restaurants
             numRestaurants={this.state.restaurants.numRestaurants}
