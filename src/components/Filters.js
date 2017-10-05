@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "./Rating";
-const Filters = ({ cuisine, rating, handleCuisineSelection }) => {
+
+const Filters = ({ data, cuisine, rating, handleCuisineSelection }) => {
   let cuisineList = [
     "Italian",
     "American",
@@ -10,7 +11,6 @@ const Filters = ({ cuisine, rating, handleCuisineSelection }) => {
     "Japanese",
     "Indian"
   ].map((type, i) => {
-    // console.log(type, "===", cuisine);
     return (
       <div
         className={`flex justify-between pv1 ph2 br1 ${type === cuisine
@@ -19,7 +19,10 @@ const Filters = ({ cuisine, rating, handleCuisineSelection }) => {
         onClick={() => handleCuisineSelection(type)}
       >
         <span className="f6 cuisine__name">{type}</span>
-        <span className="f6 cuisine__total"> # </span>
+        {data &&
+          data[type] && (
+            <span className="f6 cuisine__total custom-gray">{data[type]}</span>
+          )}
       </div>
     );
   });

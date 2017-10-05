@@ -20,6 +20,9 @@
 .bg-custom-dark-blue {
   background-color: #1c688e;
 }
+.custom-gray {
+  color: rgba(112, 112, 112, 0.6);
+}
 
 .ma {
   margin: 0 auto;
