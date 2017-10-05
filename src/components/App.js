@@ -4,10 +4,11 @@ import Search from "./Search";
 import Filters from "./Filters";
 import Restaurants from "./Restaurants";
 import algoliaSearch from "algoliasearch";
-import helper from "algoliasearch-helper";
+import algoliaSearchHelper from "algoliasearch-helper";
 
 const client = algoliaSearch("L0UMXPISE0", "4da2771aabb89fcf0579bb0370e10390");
 const index = client.initIndex("restaurants");
+let helper;
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends Component {
         value: ""
       },
       filter: {
+        data: [],
         cuisine: "",
         rating: 0
       },
@@ -28,16 +30,18 @@ class App extends Component {
     };
   }
 
+  // updates state for search input
   handleSearchInput = value => {
+    this.searchAlgolia(value);
     this.setState({
       ...this.state,
       search: {
         value: value
       }
     });
-    this.searchAlgolia(value);
   };
 
+  // updates state for cuisine filter option
   handleCuisineSelection = value => {
     let newFilterState = Object.assign(
       {},
@@ -48,24 +52,47 @@ class App extends Component {
       ...this.state,
       filter: newFilterState
     });
+    this.searchAlgolia(this.state.search.value, value);
   };
 
-  searchAlgolia = value => {
-    index.search(value, (err, content) => {
-      console.log(content);
-      this.setState({
-        ...this.state,
-        restaurants: {
+  // updates state with list of restaurants via algolia search
+  searchAlgolia = (value, cuisine) => {
+    helper = algoliaSearchHelper(client, "restaurants", {
+      facets: ["food_type"]
+    });
+    helper.on("result", content => {
+      let newFilterState = {};
+      const newRestaurantState = Object.assign(
+        {},
+        {
           numRestaurants: content.nbHits,
           data: content.hits,
           processingTime: content.processingTimeMS
         }
+      );
+      if (content.facets.length !== 0) {
+        newFilterState = Object.assign(
+          {},
+          { ...this.state.filter },
+          {
+            data: content.facets[0].data
+          }
+        );
+      }
+      this.setState({
+        ...this.state,
+        restaurants: newRestaurantState,
+        filter: newFilterState
       });
     });
+
+    if (cuisine) {
+      helper.toggleFacetRefinement("food_type", cuisine);
+    }
+    helper.setQuery(value).search();
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="app-container">
         <Search
@@ -74,6 +101,7 @@ class App extends Component {
         />
         <div className="flex">
           <Filters
+            data={this.state.filter.data}
             cuisine={this.state.filter.cuisine}
             rating={this.state.filter.rating}
             handleCuisineSelection={this.handleCuisineSelection}
