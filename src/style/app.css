@@ -1,6 +1,6 @@
 body {
   background-image: url("../graphics/background.png");
-  height: 100vh;
+  font-family: open sans;
 }
 
 .app-container {
