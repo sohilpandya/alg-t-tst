@@ -28,14 +28,11 @@
   margin: 0 auto;
 }
 
-.vh-65 {
+.vh-60 {
   height: 60vh;
 }
 
 .star__blank {
-  /* background-image: url("../graphics/star-empty.png");
-  background-position: center;
-  background-size: cover; */
   width: 2rem;
   height: 2rem;
 }

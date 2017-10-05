@@ -32,3 +32,10 @@ You will now see a new file in the dataset directory called `combinedData.json`
 - Filter by Payment Options
 - Change State for Cuisine Type so that when the user filters by a cuisine it doesn't remove the total for other cuisine types
 - Mobile Design (wireframes not provided but a must)
+
+
+**Pushing to gh-pages**
+- run `npm run deploy`
+- go to the gh-pages branch
+- update the href links to the following `https://sohilpandya.github.io/alg-t-tst/...css/js` 
+Reason for this is that I'm hosting under different domain and not the gh-pages domain. 
