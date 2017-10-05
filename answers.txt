@@ -1,0 +1,29 @@
+Q1:
+
+Hey George, 
+
+**Records**
+> Records is basically all of the data that the search engine with trawl through to get to the end result.
+> For e.g. each team in a football league will be a record and each record will contain further infomation for that given team. 
+
+**Indexing**
+> Indexing is a way of sorting through all of our records that we may provide. There are multiple ways this process can happen, the easiest option is to
+> upload our data to algolia dashboard. ps. this is great for quick experimentation but is not recommended for implementation in production
+
+**Custom Ranking**
+> If we take the example of football teams, then metrics such as number of fans, position in the table are a couple of the custom rankings that we would 
+> Implement. Thankfully, Algolia doesn't just return results based on these rankings, they also combine this with the default ranking formula
+> which also handles relevance of the search result in comparison to out custom rankings. 
+
+Q2:
+
+Hey Matt, that is unfortunate to hear, I'm very happy to walk you through the issues that you are experiencing and figure out the best way to integrate the dashboard 
+> into your workflow. I'd recommend having a look at https://www.algolia.com/doc/tutorials/getting-started/getting-started-with-the-dashboard/#dashboard-layout int he meantime. 
+
+Q3:
+
+Hey Leo, Its great to hear that you are looking to integrate this, It is very straigh forward to integrate Algolia into an existing paltform.
+> The High level process is also very simple and you'll be up and runing in no time. We need to setup an account, upload the records and connect your website using 
+> the API which works with a whole host of clients (JS, Ruby, PHP) https://www.algolia.com/doc/rest-api/search/
+> Once these steps are completed you are ready to go! 
+
