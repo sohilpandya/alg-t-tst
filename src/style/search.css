@@ -1,0 +1,18 @@
+.search {
+  background-color: #1c688e;
+  padding: 2rem 0;
+}
+
+.search__input {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  font-size: 1rem;
+  border-radius: 3px;
+  padding: 0.5rem;
+  border: 1px solid #d6d6d6;
+}
+
+input[type="name"].search__input::-webkit-input-placeholder {
+  color: #b3b3b3;
+}

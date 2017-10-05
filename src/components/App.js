@@ -55,12 +55,11 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <p> hello!</p>
         <Search
           inputValue={this.state.search.value}
           handleSearchInput={this.handleSearchInput}
         />
-        <div>
+        <div className="flex">
           <Filters
             cuisine={this.state.filter.cuisine}
             rating={this.state.filter.rating}

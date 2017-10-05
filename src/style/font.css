@@ -1,0 +1,15 @@
+.f-header {
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-family: open sans;
+}
+.f-sub-header {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: open sans;
+}
+.f-body {
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-family: open sans;
+}
